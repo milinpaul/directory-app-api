@@ -7,7 +7,7 @@ services:
     restart: always
     build: .
     ports:
-      - '80:2255'
+      - '2255:2255'
     command: npm run dev
     links:
       - mongo
