@@ -6,10 +6,7 @@ const updateListingService = async (req, res, next) => {
     body
   } = req
   try {
-    // const listing = await Listing.findOne({ _id: listingId })
-
     const updatedListing = await Listing.updateOne({ _id: listingId }, { $set: { ...body } })
-
     res.status(200).json(updatedListing)
   } catch (error) {
     if (error.name === 'ValidationError') {
