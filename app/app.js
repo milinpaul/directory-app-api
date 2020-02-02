@@ -1,14 +1,19 @@
 const express = require('express')
 
 const app = express()
-const router = express.Router()
 require('dotenv').config()
 
 require('./configs')(app, express)
 require('./configs/db')
 
+const BASE_URL = process.env.BASE_URL
+
 // Importing Modules
-require('./modules/Home')(app)
+const homeRouter = require('./modules/Home')
+const listingRouter = require('./modules/listings')
+
+app.use(`${BASE_URL}`, homeRouter)
+app.use(`${BASE_URL}/listing`, listingRouter)
 
 //Error Handling & Not Found Middlewares
 require('./middlewares')(app)
