@@ -2,6 +2,7 @@ const express = require('express')
 const morgan = require('morgan')
 const helmet = require('helmet')
 const cors = require('cors')
+const mongoose = require('mongoose')
 
 require('dotenv').config()
 
@@ -17,6 +18,14 @@ app.use(
   })
 )
 app.use(express.json())
+
+mongoose
+  .connect('mongodb://mongo:27017/directory-app', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  })
+  .then(() => console.log('Connected To MongoDb'))
+  .catch((err) => console.log(err))
 
 app.get('/', (req, res) => {
   res.json({
