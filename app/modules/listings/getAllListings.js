@@ -1,4 +1,4 @@
-const Listing = require('../../Schemas/ListingSchema')
+const Listing = require('../../schemas/ListingSchema')
 
 const getAllListings = async (req, res, next) => {
   try {

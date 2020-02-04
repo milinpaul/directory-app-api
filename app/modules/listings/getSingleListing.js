@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const Listing = require('../../Schemas/ListingSchema')
+const Listing = require('../../schemas/ListingSchema')
 
 const getSingleListing = async (req, res, next) => {
   const {

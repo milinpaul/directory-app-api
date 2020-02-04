@@ -6,14 +6,9 @@ require('dotenv').config()
 require('./configs')(app, express)
 require('./configs/db')
 
-const BASE_URL = process.env.BASE_URL
+// Importing Routes & Modules
 
-// Importing Modules
-const homeRouter = require('./modules/Home')
-const listingRouter = require('./modules/listings')
-
-app.use(`${BASE_URL}`, homeRouter)
-app.use(`${BASE_URL}/listing`, listingRouter)
+require('./Router')(app)
 
 //Error Handling & Not Found Middlewares
 require('./middlewares')(app)

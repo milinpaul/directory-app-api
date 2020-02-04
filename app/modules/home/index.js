@@ -1,6 +1,6 @@
 const { Router } = require('express')
 
-const HomeService = require('./HomeService')
+const HomeService = require('./homeService')
 
 const router = Router()
 router.get('/', HomeService)
