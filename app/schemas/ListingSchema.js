@@ -17,7 +17,11 @@ const ListingSchema = new Schema(
     phoneNumber: String,
     twitterURL: String,
     facebookURL: String,
-    instagramURL: String
+    instagramURL: String,
+    isFeatured: {
+      type: Boolean,
+      default: false
+    }
   },
   {
     timestamps: true
